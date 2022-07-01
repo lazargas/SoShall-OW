@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const expressValidator = require('express-validator');
+const cors = require('cors');
 
 // import mongoose
 const mongoose = require('mongoose');
@@ -29,6 +30,7 @@ app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(expressValidator());
+app.use(cors());
 app.use("/", postRoutes);
 app.use("/", authRoutes);
 app.use("/", userRoutes);
